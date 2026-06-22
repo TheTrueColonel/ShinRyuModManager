@@ -91,9 +91,7 @@ if [[ "$IS_PREVIEW" = false ]]; then
   
     7za a "${UPDATER_OUTPUT_DIR}/${OUTPUT_FILE_BASE}.zip" -tzip -bd -y "${DIR}/*" > /dev/null
     tar czf "${UPDATER_OUTPUT_DIR}/${OUTPUT_FILE_BASE}.tar.gz" --owner=0 --group=0 --numeric-owner -C "${DIR}/" .
-    
-    cp -r "${UPDATER_OUTPUT_DIR}/." "$GITHUB_WORKSPACE/AppcastRepo/updater/"
-    
+        
     ### Create Appcast
     
     # Really hate how this is done, but I can't think of anything better
@@ -108,5 +106,4 @@ if [[ "$IS_PREVIEW" = false ]]; then
 
   ### Copy AppCasts to repo
   
-  cp -r "${APPCAST_OUTPUT_DIR}/." "$GITHUB_WORKSPACE/AppcastRepo/releases/"
 fi
